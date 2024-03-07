@@ -1,0 +1,15 @@
+.App {
+  background-color: hsl(206, 94%, 87%);
+  min-height: 100vh;
+  display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.App-content {
+  width: 70em;
+  height: 36em;
+  background-color: white;
+  border-radius: 20px;
+}
+
