@@ -2,9 +2,7 @@
 .FirstBar {
     display: flex;
     flex-direction: column;
-    
     margin-top: -34em;
-   
     margin-left: 2em;
     }
 
@@ -18,8 +16,10 @@
         display: flex;
         align-items: center;
         justify-content: center;
-            background-color: rgb(152, 240, 240);
-            color: black;
+            background-color: none;
+            border: 1px solid white;
+           
+            color: white;
             border-radius: 100%;
             width: 35px;
             height: 35px;
