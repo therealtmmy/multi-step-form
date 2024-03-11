@@ -28,12 +28,11 @@ const Bars = () => {
     },
   ];
 
-  console.log(bars);
   return (
     <div className="FirstBar">
-      {bars.map((value) => (
-        <div className="Row">
-          <p className="Number">{value.number}</p>
+      {bars.map((value, index) => (
+        <div key={index} className="Row">
+          <p>{value.number}</p>
           <div className="Step">
             {" "}
             <p>{value.step}</p>

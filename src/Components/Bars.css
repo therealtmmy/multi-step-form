@@ -13,18 +13,19 @@
         align-items: center;
         gap: 20px;
     }
-    
-    .Number {
+
+    .Row > :first-child {
         display: flex;
-    align-items: center;
-    justify-content: center;
-        background-color: rgb(152, 240, 240);
-        color: black;
-        border-radius: 100%;
-        width: 35px;
-        height: 35px;
-        font-weight: 700;
+        align-items: center;
+        justify-content: center;
+            background-color: rgb(152, 240, 240);
+            color: black;
+            border-radius: 100%;
+            width: 35px;
+            height: 35px;
+            font-weight: 700;
     }
+    
     
     .Step {
         line-height: 3px;
@@ -36,4 +37,5 @@
     
     .Step > :nth-child(2) {
         font-weight: 600;
+        letter-spacing: 1px;
     }
