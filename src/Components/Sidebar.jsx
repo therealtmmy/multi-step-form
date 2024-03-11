@@ -48,6 +48,15 @@ const Sidebar = () => {
           />
         </g>
       </svg>
+      <div className="FirstBar">
+        <p className="Number">1</p>
+
+        <div>
+          {" "}
+          <p>STEP 1</p>
+          <p>YOUR INFO</p>
+        </div>
+      </div>
     </div>
   );
 };
