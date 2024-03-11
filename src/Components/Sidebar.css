@@ -5,22 +5,3 @@
     margin-left: 10px;
     margin-top: 10px;
 }
-
-.FirstBar {
-display: flex;
-align-items: center;
-margin-top: -35em;
-gap: 20px;
-margin-left: 2em;
-}
-
-.Number {
-    display: flex;
-align-items: center;
-justify-content: center;
-    background-color: rgb(152, 240, 240);
-    color: black;
-    border-radius: 100%;
-    width: 35px;
-    height: 35px;
-}

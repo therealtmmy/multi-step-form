@@ -1,5 +1,6 @@
 import React from "react";
 import "./Sidebar.css";
+import Bars from "./Bars";
 
 const Sidebar = () => {
   return (
@@ -48,14 +49,9 @@ const Sidebar = () => {
           />
         </g>
       </svg>
-      <div className="FirstBar">
-        <p className="Number">1</p>
 
-        <div>
-          {" "}
-          <p>STEP 1</p>
-          <p>YOUR INFO</p>
-        </div>
+      <div>
+        <Bars />
       </div>
     </div>
   );
