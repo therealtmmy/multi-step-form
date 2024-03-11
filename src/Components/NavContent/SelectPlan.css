@@ -1,0 +1,46 @@
+.SelectPlan {
+    margin-top: 2.5em;
+}
+
+.SelectPlan > :nth-child(2) {
+    color: rgb(51, 51, 119);
+}
+
+.PlanRoll {
+    display: flex;
+    gap: 20px;
+    margin-top: 2.5em;
+   
+}
+
+.RollOne {
+    width: 7em;
+    height: 9em;
+    border: 1px solid rgb(51, 51, 119);
+    border-radius: 10px;
+    color: rgb(51, 51, 119);
+    padding: 15px;
+}
+
+.RollContent {
+    line-height: 6px;
+    margin-top: 3em;
+}
+
+.RollContent > :first-child{
+    font-weight: 700;
+    margin-top: 10px;
+
+}
+
+.RollContent > :nth-child(2)
+{
+    font-size: 15px;
+    color: rgb(171, 160, 207);
+}
+
+.RollContent > :last-child
+{
+    font-size: 14px;
+   
+}
