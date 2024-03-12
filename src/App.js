@@ -3,6 +3,7 @@ import Sidebar from "./Components/Sidebar";
 import Info from "./Components/NavContent/Info";
 import ThankYou from "./Components/NavContent/ThankYou";
 import SelectPlan from "./Components/NavContent/SelectPlan";
+import PickAddOns from "./Components/NavContent/PickAddOns";
 
 function App() {
   return (
@@ -11,7 +12,8 @@ function App() {
         <Sidebar />
         {/* <Info /> */}
         {/* <ThankYou /> */}
-        <SelectPlan />
+        {/* <SelectPlan /> */}
+        <PickAddOns />
       </div>
     </div>
   );

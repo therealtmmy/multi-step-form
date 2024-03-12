@@ -38,6 +38,12 @@ const SelectPlan = () => {
 
         <p>Yearly</p>
       </div>
+
+      <div className="Btn">
+        {" "}
+        <button>Go Back</button>
+        <button>Next Step</button>
+      </div>
     </div>
   );
 };
