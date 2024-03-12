@@ -28,6 +28,16 @@ const SelectPlan = () => {
           <PlansToSelect key={index} items={items} {...items} />
         ))}
       </div>
+
+      <div className="Switch">
+        <p>Monthly</p>
+        <label className="switch">
+          <input type="checkbox" />
+          <span className="slider"></span>
+        </label>
+
+        <p>Yearly</p>
+      </div>
     </div>
   );
 };
