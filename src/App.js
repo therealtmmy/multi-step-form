@@ -11,11 +11,11 @@ function App() {
     <div className="App">
       <div className="App-content">
         <Sidebar />
-        {/* <Info /> */}
+        <Info />
         {/* <SelectPlan /> */}
         {/* <PickAddOns /> */}
+        {/* <Summary /> */}
         {/* <ThankYou /> */}
-        <Summary />
       </div>
     </div>
   );
