@@ -1,0 +1,78 @@
+.Summary {
+    margin-top: 2em;
+}
+
+.Arcade {
+        display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2em;
+    width: 30em;
+    height: 12em;
+    background-color: rgba(127, 255, 212, 0.1);
+    border-radius: 10px;
+    padding-top: 7px;
+}
+
+.Yearly {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 15em;
+}
+
+.ArcHead > :first-child {
+    margin-bottom: 2px;
+        color: rgb(2, 2, 53);
+        font-weight: 600;
+}
+
+
+.ArcHead > :last-child {
+   font-size: 14px;
+}
+
+.Line {
+    margin-top: 20px;
+    width: 25em;
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.Yearly  > :last-child{
+      color: rgb(2, 2, 53);
+        font-weight: 600;
+}
+
+.Online {
+    display: flex;
+    gap: 18.5em;
+    margin-top: 12px;
+    font-size: 14.1px;
+    margin-bottom: -10px;
+}
+
+.Large {
+     display: flex;
+    gap: 18.5em;
+    
+    font-size: 13.9px;
+}
+
+.Total {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    gap: 16em;
+    margin-top: 12px;
+    font-size: 14.1px;
+    margin-bottom: -10px;
+}
+
+.Total > :last-child {
+    color: blue;
+    font-weight: 700;
+    font-size: 20px;
+}
