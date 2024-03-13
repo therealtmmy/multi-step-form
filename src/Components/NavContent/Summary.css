@@ -2,6 +2,10 @@
     margin-top: 2em;
 }
 
+.Summary > :nth-child(2) {
+     color: rgb(139, 138, 138);
+}
+
 .Arcade {
         display: flex;
     flex-direction: column;
@@ -54,6 +58,14 @@
     margin-bottom: -10px;
 }
 
+.Online > :first-child, .Large > :first-child, .Total > :first-child {
+    color: rgb(139, 138, 138);
+}
+
+.Online > :last-child, .Large > :last-child {
+    font-weight: 600;
+}
+
 .Large {
      display: flex;
     gap: 18.5em;
@@ -66,7 +78,7 @@
         align-items: center;
         justify-content: center;
     gap: 16em;
-    margin-top: 12px;
+    margin-top: 8px;
     font-size: 14.1px;
     margin-bottom: -10px;
 }
