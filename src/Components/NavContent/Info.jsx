@@ -9,7 +9,7 @@ const Info = () => {
   });
 
   const Next = () => {
-    console.log(`${info}`);
+    console.log(info);
   };
 
   return (
@@ -30,7 +30,7 @@ const Info = () => {
         <input
           type="email"
           value={info.email}
-          onChange={(e) => setInfo({ ...info, email: e.target.email })}
+          onChange={(e) => setInfo({ ...info, email: e.target.value })}
           placeholder="e.g stephenking@lorem.com"
         />
 
