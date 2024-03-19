@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./Info.css";
+import { Link } from "react-router-dom";
 
 const Info = () => {
   const [info, setInfo] = useState({
@@ -7,9 +8,13 @@ const Info = () => {
     email: "",
     phoneNumber: "",
   });
+  const [to, setTo] = useState("");
 
   const Next = () => {
-    console.log(info);
+    if (info !== "") {
+      setTo("selectPlan");
+      console.log(info);
+    } else return;
   };
 
   return (
@@ -17,7 +22,7 @@ const Info = () => {
       <h1>Personal info</h1>
       <p>Please provide your name, email address and phone number.</p>
 
-      <form action="" method="post" className="formDiv">
+      <form to="selectPlan" method="post" className="formDiv">
         <label htmlFor="Name">Name</label>
         <input
           type="text"
@@ -43,7 +48,9 @@ const Info = () => {
         />
       </form>
 
-      <button onClick={Next}>Next Step</button>
+      <button to={to} onClick={Next}>
+        Next Step
+      </button>
     </div>
   );
 };

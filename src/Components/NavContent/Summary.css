@@ -1,5 +1,10 @@
 .Summary {
-    margin-top: 2em;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 50%;
+    left: 58%;
+    transform: translate(-50%, -50%);
 }
 
 .Summary > :nth-child(2) {

@@ -1,5 +1,10 @@
 .AddOn {
-    margin-top: 1em;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 50%;
+    left: 58%;
+    transform: translate(-50%, -50%);
 }
 
 .AddOn > :nth-child(2) {

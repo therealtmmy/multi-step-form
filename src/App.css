@@ -4,15 +4,6 @@
   font-family: "Ubuntu", sans-serif;
 }
 
-.App {
-
-  background-color: hsl(206, 94%, 87%);
-  min-height: 100vh;
-  display: flex;
-align-items: center;
-justify-content: center;
-}
-
 .App-content {
   width: 60em;
   height: 36.8em;

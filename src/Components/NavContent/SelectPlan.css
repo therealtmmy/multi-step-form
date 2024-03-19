@@ -1,5 +1,8 @@
 .SelectPlan {
-    margin-top: 2.5em;
+    position: absolute;
+    top: 50%;
+    left: 58%;
+    transform: translate(-50%, -50%);
 }
 
 .SelectPlan > :nth-child(2) {

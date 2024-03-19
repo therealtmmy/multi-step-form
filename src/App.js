@@ -5,19 +5,33 @@ import ThankYou from "./Components/NavContent/ThankYou";
 import SelectPlan from "./Components/NavContent/SelectPlan";
 import PickAddOns from "./Components/NavContent/PickAddOns";
 import Summary from "./Components/NavContent/Summary";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-      <div className="App-content">
+    // <BrowserRouter>
+    //   <Routes>
+    //     <Route path="/" element={<Sidebar />}>
+    //       <Route index element={<Info />} />
+    //       <Route path="selectPlan" element={<SelectPlan />} />
+    //       <Route path="pickaddon" element={<PickAddOns />} />
+    //       <Route path="summary" element={<Summary />} />
+    //       <Route path="thankyou" element={<ThankYou />} />
+    //     </Route>
+    //   </Routes>
+    // </BrowserRouter>
+
+    <>
+      <div>
         <Sidebar />
-        <Info />
+
+        {/* <Info /> */}
         {/* <SelectPlan /> */}
         {/* <PickAddOns /> */}
         {/* <Summary /> */}
         {/* <ThankYou /> */}
       </div>
-    </div>
+    </>
   );
 }
 
