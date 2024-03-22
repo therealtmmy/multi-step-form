@@ -1,7 +1,7 @@
 import React from "react";
 import "./Sidebar.css";
 import Bars from "./Bars";
-import Info from "./NavContent/Info";
+import { Outlet } from "react-router-dom";
 
 const Sidebar = () => {
   return (
@@ -55,6 +55,7 @@ const Sidebar = () => {
         <div>
           <Bars />
         </div>
+        <Outlet />
       </div>
     </div>
   );

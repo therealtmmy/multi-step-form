@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import "./SelectPlan.css";
 import plans from "./SelectData";
+import { NavLink, Link } from "react-router-dom";
 
-const PlansToSelect = ({ items }) => (
+const PlansToSelect = ({ items, on }) => (
   <>
     {" "}
     <div className="RollOne">
@@ -10,14 +11,29 @@ const PlansToSelect = ({ items }) => (
       <div dangerouslySetInnerHTML={{ __html: items.svg }} />
       <div className="RollContent">
         <p>{items.plan}</p>
-        <p>{items.year}</p>
-        <p>{items.month}</p>
+
+        {on ? (
+          <p>{items.month}</p>
+        ) : (
+          <div className="YearContent">
+            {" "}
+            <p>{items.year}</p>
+            <p>{items.months}</p>
+          </div>
+        )}
       </div>
     </div>
   </>
 );
 
 const SelectPlan = () => {
+  const [on, setOn] = useState(true);
+
+  const switchBtn = () => {
+    setOn(!on);
+    console.log(on);
+  };
+
   return (
     <div className="SelectPlan">
       <h1>Select your plan</h1>
@@ -25,14 +41,24 @@ const SelectPlan = () => {
 
       <div className="PlanRoll">
         {plans.map((items, index) => (
-          <PlansToSelect key={index} items={items} {...items} />
+          // <PlansToSelect key={index} items={items} {...items} />
+          <NavLink
+            id="RollNav"
+            to="/selectPlan"
+            style={({ isActive }) => {
+              return { backgroundColor: isActive ? " #eaeaeb" : "red" };
+            }}
+            key={index}
+          >
+            <PlansToSelect items={items} on={on} {...items} />
+          </NavLink>
         ))}
       </div>
 
       <div className="Switch">
         <p>Monthly</p>
         <label className="switch">
-          <input type="checkbox" />
+          <input type="checkbox" onClick={switchBtn} />
           <span className="slider"></span>
         </label>
 
@@ -41,8 +67,8 @@ const SelectPlan = () => {
 
       <div className="Btn">
         {" "}
-        <button>Go Back</button>
-        <button>Next Step</button>
+        <Link to="/">Go Back</Link>
+        <Link>Next Step</Link>
       </div>
     </div>
   );

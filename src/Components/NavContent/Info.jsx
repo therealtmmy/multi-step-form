@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./Info.css";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Info = () => {
   const [info, setInfo] = useState({
@@ -8,13 +8,14 @@ const Info = () => {
     email: "",
     phoneNumber: "",
   });
-  const [to, setTo] = useState("");
 
+  const navigate = useNavigate();
   const Next = () => {
-    if (info !== "") {
-      setTo("selectPlan");
-      console.log(info);
-    } else return;
+    if (info.name === "" || info.email === "" || info.phoneNumber === "") {
+      alert("Please fill up all input fields");
+    } else {
+      navigate("/selectPlan");
+    }
   };
 
   return (
@@ -22,7 +23,7 @@ const Info = () => {
       <h1>Personal info</h1>
       <p>Please provide your name, email address and phone number.</p>
 
-      <form to="selectPlan" method="post" className="formDiv">
+      <form method="post" className="formDiv">
         <label htmlFor="Name">Name</label>
         <input
           type="text"
@@ -48,7 +49,7 @@ const Info = () => {
         />
       </form>
 
-      <button to={to} onClick={Next}>
+      <button className="button" onClick={Next}>
         Next Step
       </button>
     </div>

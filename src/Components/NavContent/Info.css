@@ -39,9 +39,12 @@ label {
     color: rgb(2, 2, 53);
 }
 
-button {
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 8em;
-    height: 3em;
+    height: 2.7em;
     border: none;
     border-radius: 7px;
     color: white;
@@ -49,4 +52,5 @@ button {
     cursor: pointer;
     margin-top: 7em;
     margin-left: 28.1em;
+  text-decoration: none;
 }

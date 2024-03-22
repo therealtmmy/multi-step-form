@@ -1,5 +1,6 @@
 import React from "react";
 import "./Summary.css";
+import { Link } from "react-router-dom";
 
 const Summary = () => {
   return (
@@ -36,8 +37,8 @@ const Summary = () => {
 
       <div className="Btn">
         {" "}
-        <button>Go Back</button>
-        <button>Confirm</button>
+        <Link to="/pickaddon">Go Back</Link>
+        <Link>Confirm</Link>
       </div>
     </div>
   );

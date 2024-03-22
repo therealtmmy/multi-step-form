@@ -1,6 +1,7 @@
 import React from "react";
 import "./PickAdd.css";
 import Pick from "./PickData";
+import { Link } from "react-router-dom";
 
 const PickAdds = ({ item }) => (
   <>
@@ -35,8 +36,8 @@ const PickAddOns = () => {
 
       <div className="Btn">
         {" "}
-        <button>Go Back</button>
-        <button>Next Step</button>
+        <Link to="/selectPlan">Go Back</Link>
+        <Link>Next Step</Link>
       </div>
     </div>
   );
