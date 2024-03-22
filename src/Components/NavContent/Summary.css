@@ -16,9 +16,9 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: 2em;
+    margin-top: 1em;
     width: 30em;
-    height: 12em;
+    height: 15em;
     background-color: rgba(127, 255, 212, 0.1);
     border-radius: 10px;
     padding-top: 7px;
@@ -68,7 +68,8 @@
 }
 
 .Online > :last-child, .Large > :last-child {
-    font-weight: 600;
+    font-weight: 400;
+    color: rgba(4, 4, 208, 0.8);
 }
 
 .Large {
@@ -76,6 +77,18 @@
     gap: 18.5em;
     
     font-size: 13.9px;
+}
+
+.Custom {
+    display: flex;
+    gap: 15.5em;
+    color: rgb(139, 138, 138);
+    font-size: 13.9px;
+    margin-top: -12px;
+}
+
+.Custom > :last-child {
+    color: rgba(4, 4, 208, 0.8);
 }
 
 .Total {

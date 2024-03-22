@@ -1,9 +1,9 @@
 import React from "react";
 import "./PickAdd.css";
 import Pick from "./PickData";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
-const PickAdds = ({ item }) => (
+const PickAdds = ({ item, on }) => (
   <>
     <div className="Pick">
       <div className="Service">
@@ -16,13 +16,18 @@ const PickAdds = ({ item }) => (
       </div>
 
       <div className="Amount">
-        <p>{item.amount}</p>
+        {on ? <p>{item.mon}</p> : <p>{item.amount}</p>}
       </div>
     </div>
   </>
 );
 
-const PickAddOns = () => {
+const PickAddOns = ({ on, setOn }) => {
+  const navigate = useNavigate();
+  const PickAddNext = () => {
+    navigate("/summary");
+  };
+
   return (
     <div className="AddOn">
       <h1>Pick add-ons</h1>
@@ -30,14 +35,14 @@ const PickAddOns = () => {
 
       <div>
         {Pick.map((item, index) => (
-          <PickAdds key={index} item={item} {...item} />
+          <PickAdds key={index} item={item} on={on} {...item} />
         ))}
       </div>
 
       <div className="Btn">
         {" "}
         <Link to="/selectPlan">Go Back</Link>
-        <Link>Next Step</Link>
+        <button onClick={PickAddNext}>Next Step</button>
       </div>
     </div>
   );

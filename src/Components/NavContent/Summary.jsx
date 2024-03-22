@@ -2,7 +2,7 @@ import React from "react";
 import "./Summary.css";
 import { Link } from "react-router-dom";
 
-const Summary = () => {
+const Summary = ({ on }) => {
   return (
     <div className="Summary">
       <h1>Finishing up</h1>
@@ -12,7 +12,7 @@ const Summary = () => {
         <div className="Yearly">
           <div className="ArcHead">
             <p>Arcade(Yearly)</p>
-            <a href="">Change</a>
+            <a href="/selectPlan">Change</a>
           </div>
           <p>$90/yr</p>
         </div>
@@ -21,12 +21,17 @@ const Summary = () => {
 
         <div className="Online">
           <p>Online service</p>
-          <p>+$10/yr</p>
+          {on ? <p>+$1/mo</p> : <p>+$10/yr</p>}
         </div>
 
         <div className="Large">
           <p>Larger storage</p>
-          <p>+$20/yr</p>
+          {on ? <p>+$2/mo</p> : <p>+$20/yr</p>}
+        </div>
+
+        <div className="Custom">
+          <p>Customizable Profile</p>
+          {on ? <p>+$2/mo</p> : <p>+$20/yr</p>}
         </div>
       </div>
 
@@ -38,7 +43,7 @@ const Summary = () => {
       <div className="Btn">
         {" "}
         <Link to="/pickaddon">Go Back</Link>
-        <Link>Confirm</Link>
+        <button>Confirm</button>
       </div>
     </div>
   );

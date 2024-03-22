@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./SelectPlan.css";
 import plans from "./SelectData";
-import { NavLink, Link } from "react-router-dom";
+import { NavLink, Link, useNavigate } from "react-router-dom";
 
 const PlansToSelect = ({ items, on }) => (
   <>
@@ -26,12 +26,16 @@ const PlansToSelect = ({ items, on }) => (
   </>
 );
 
-const SelectPlan = () => {
-  const [on, setOn] = useState(true);
-
+const SelectPlan = ({ on, setOn }) => {
   const switchBtn = () => {
     setOn(!on);
     console.log(on);
+  };
+
+  const navigate = useNavigate();
+  const NextPlan = () => {
+    console.log("Oluwatimilehin");
+    navigate("/pickaddon");
   };
 
   return (
@@ -68,7 +72,7 @@ const SelectPlan = () => {
       <div className="Btn">
         {" "}
         <Link to="/">Go Back</Link>
-        <Link>Next Step</Link>
+        <button onClick={NextPlan}>Next Step</button>
       </div>
     </div>
   );
