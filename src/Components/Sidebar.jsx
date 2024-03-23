@@ -3,7 +3,7 @@ import "./Sidebar.css";
 import Bars from "./Bars";
 import { Outlet } from "react-router-dom";
 
-const Sidebar = () => {
+const Sidebar = ({ active, setActive }) => {
   return (
     <div className="Hero">
       <div className="Sidebar">
@@ -53,7 +53,7 @@ const Sidebar = () => {
         </svg>
 
         <div>
-          <Bars />
+          <Bars active={active} setActive={setActive} />
         </div>
         <Outlet />
       </div>

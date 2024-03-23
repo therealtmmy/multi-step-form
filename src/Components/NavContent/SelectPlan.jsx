@@ -3,35 +3,44 @@ import "./SelectPlan.css";
 import plans from "./SelectData";
 import { NavLink, Link, useNavigate } from "react-router-dom";
 
-const PlansToSelect = ({ items, on }) => (
+const PlansToSelect = ({ items, on, clicked, setClicked }) => (
   <>
     {" "}
-    <div className="RollOne">
-      {" "}
-      <div dangerouslySetInnerHTML={{ __html: items.svg }} />
-      <div className="RollContent">
-        <p>{items.plan}</p>
+    <div className={clicked === items.id ? "RollOnclick" : "RollOne"}>
+      <input
+        type="checkbox"
+        checked={clicked === items.id}
+        onChange={() => {
+          if (clicked === items.id) {
+            setClicked(null);
+          } else {
+            setClicked(items.id);
+          }
+        }}
+        className="PlanCheckbox"
+      />{" "}
+      <div className="Plans">
+        <div dangerouslySetInnerHTML={{ __html: items.svg }} />
+        <div className="RollContent">
+          <p>{items.plan}</p>
 
-        {on ? (
-          <p>{items.month}</p>
-        ) : (
-          <div className="YearContent">
-            {" "}
-            <p>{items.year}</p>
-            <p>{items.months}</p>
-          </div>
-        )}
+          {on ? (
+            <p>{items.month}</p>
+          ) : (
+            <div className="YearContent">
+              {" "}
+              <p>{items.year}</p>
+              <p>{items.months}</p>
+            </div>
+          )}
+        </div>
       </div>
     </div>
   </>
 );
 
 const SelectPlan = ({ on, setOn }) => {
-  const switchBtn = () => {
-    setOn(!on);
-    console.log(on);
-  };
-
+  const [clicked, setClicked] = useState(false);
   const navigate = useNavigate();
   const NextPlan = () => {
     console.log("Oluwatimilehin");
@@ -44,25 +53,22 @@ const SelectPlan = ({ on, setOn }) => {
       <p>You have the option of monthly or yearly billing</p>
 
       <div className="PlanRoll">
-        {plans.map((items, index) => (
-          // <PlansToSelect key={index} items={items} {...items} />
-          <NavLink
-            id="RollNav"
-            to="/selectPlan"
-            style={({ isActive }) => {
-              return { backgroundColor: isActive ? " #eaeaeb" : "red" };
-            }}
-            key={index}
-          >
-            <PlansToSelect items={items} on={on} {...items} />
-          </NavLink>
+        {plans.map((items) => (
+          <PlansToSelect
+            key={items.id}
+            on={on}
+            setClicked={setClicked}
+            clicked={clicked}
+            items={items}
+            {...items}
+          />
         ))}
       </div>
 
       <div className="Switch">
         <p>Monthly</p>
         <label className="switch">
-          <input type="checkbox" onClick={switchBtn} />
+          <input type="checkbox" checked={!on} onClick={() => setOn(!on)} />
           <span className="slider"></span>
         </label>
 

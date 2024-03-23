@@ -12,7 +12,7 @@
         gap: 20px;
     }
 
-    .Row > :first-child {
+    .StepNo {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -24,6 +24,22 @@
             width: 35px;
             height: 35px;
             font-weight: 700;
+    }
+
+    .ActiveTab {
+      
+            display: flex;
+            align-items: center;
+            justify-content: center;
+                background-color: rgb(189, 229, 229);
+                border: 3px solid white;
+               
+                color: rgb(13, 6, 6);
+                border-radius: 100%;
+                width: 35px;
+                height: 35px;
+                font-weight: 500;
+    
     }
     
     

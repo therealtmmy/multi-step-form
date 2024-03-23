@@ -1,13 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import "./PickAdd.css";
 import Pick from "./PickData";
 import { Link, useNavigate } from "react-router-dom";
 
-const PickAdds = ({ item, on }) => (
+const PickAdds = ({ item, on, isPicked, setIsPicked }) => (
   <>
-    <div className="Pick">
+    <div className={isPicked.includes(item.id) === item.id ? "Picked" : "Pick"}>
       <div className="Service">
-        <input type="checkbox" className="Checkbox" />
+        <input
+          type="checkbox"
+          className="Checkbox"
+          checked={isPicked.includes(item.id)}
+          onChange={() => {
+            const updatedCheckboxes = isPicked.includes(item.id)
+              ? isPicked.filter((id) => id !== item.id) // Uncheck if already active
+              : [...isPicked, item.id]; // Check if not active
+
+            setIsPicked(updatedCheckboxes);
+          }}
+        />
 
         <div className=" ServeBox">
           <p>{item.online}</p>
@@ -23,6 +34,8 @@ const PickAdds = ({ item, on }) => (
 );
 
 const PickAddOns = ({ on, setOn }) => {
+  const [isPicked, setIsPicked] = useState([]);
+
   const navigate = useNavigate();
   const PickAddNext = () => {
     navigate("/summary");
@@ -34,8 +47,15 @@ const PickAddOns = ({ on, setOn }) => {
       <p>Add-ons help enhance your gaming experience</p>
 
       <div>
-        {Pick.map((item, index) => (
-          <PickAdds key={index} item={item} on={on} {...item} />
+        {Pick.map((item) => (
+          <PickAdds
+            key={item.id}
+            item={item}
+            isPicked={isPicked}
+            setIsPicked={setIsPicked}
+            on={on}
+            {...item}
+          />
         ))}
       </div>
 

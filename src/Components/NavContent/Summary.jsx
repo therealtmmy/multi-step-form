@@ -1,8 +1,9 @@
 import React from "react";
 import "./Summary.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Summary = ({ on }) => {
+  const navigate = useNavigate();
   return (
     <div className="Summary">
       <h1>Finishing up</h1>
@@ -43,7 +44,7 @@ const Summary = ({ on }) => {
       <div className="Btn">
         {" "}
         <Link to="/pickaddon">Go Back</Link>
-        <button>Confirm</button>
+        <button onClick={() => navigate("/thankyou")}>Confirm</button>
       </div>
     </div>
   );

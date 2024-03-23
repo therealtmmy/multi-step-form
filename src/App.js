@@ -10,21 +10,52 @@ import { useState } from "react";
 
 function App() {
   const [on, setOn] = useState(true);
+  const [active, setActive] = useState("true");
 
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Sidebar />}>
-          <Route index element={<Info />} />
+        <Route
+          path="/"
+          element={<Sidebar active={active} setActive={setActive} />}
+        >
+          <Route
+            index
+            element={<Info active={active} setActive={setActive} />}
+          />
           <Route
             path="selectPlan"
-            element={<SelectPlan on={on} setOn={setOn} />}
+            element={
+              <SelectPlan
+                active={active}
+                setActive={setActive}
+                on={on}
+                setOn={setOn}
+              />
+            }
           />
           <Route
             path="pickaddon"
-            element={<PickAddOns on={on} setOn={setOn} />}
+            element={
+              <PickAddOns
+                active={active}
+                setActive={setActive}
+                on={on}
+                setOn={setOn}
+              />
+            }
           />
-          <Route path="summary" element={<Summary on={on} setOn={setOn} />} />
+          <Route
+            path="summary"
+            element={
+              <Summary
+                on={on}
+                active={active}
+                setActive={setActive}
+                setOn={setOn}
+              />
+            }
+          />
           <Route path="thankyou" element={<ThankYou />} />
         </Route>
       </Routes>

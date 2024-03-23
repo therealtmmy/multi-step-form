@@ -1,13 +1,13 @@
 const Pick = [
   {
-    box: "",
+    id: "0",
     online: "Online Service",
     access: "Access to multiplayer games",
     mon: "+$1/mo",
     amount: "+$10/yr",
   },
   {
-    box: "",
+    id: "1",
     online: "Larger storage",
     access: "Extra 1TB of cloud save",
     mon: "+$2/mo",
@@ -15,7 +15,7 @@ const Pick = [
   },
 
   {
-    box: "",
+    id: "2",
     online: "Customizable profile",
     access: "Custom theme on your profile",
     mon: "+$2/mo",

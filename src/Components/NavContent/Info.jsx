@@ -2,19 +2,21 @@ import React, { useState } from "react";
 import "./Info.css";
 import { useNavigate } from "react-router-dom";
 
-const Info = () => {
+const Info = ({ active, setActive }) => {
   const [info, setInfo] = useState({
     name: "",
     email: "",
     phoneNumber: "",
   });
+  const [error, setError] = useState(false);
 
   const navigate = useNavigate();
   const Next = () => {
     if (info.name === "" || info.email === "" || info.phoneNumber === "") {
-      alert("Please fill up all input fields");
+      setError(true);
     } else {
       navigate("/selectPlan");
+      setActive(!active);
     }
   };
 
@@ -47,6 +49,11 @@ const Info = () => {
           onChange={(e) => setInfo({ ...info, phoneNumber: e.target.value })}
           placeholder="e.g +1 234 567 890"
         />
+        {error ? (
+          <p className="Error">
+            The fields are required to be able to continue
+          </p>
+        ) : null}
       </form>
 
       <button className="button" onClick={Next}>

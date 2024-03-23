@@ -1,7 +1,8 @@
 import React from "react";
 import "./Bars.css";
 
-const Bars = () => {
+const Bars = ({ active }) => {
+  console.log(active);
   const bars = [
     {
       number: "1",
@@ -30,9 +31,11 @@ const Bars = () => {
 
   return (
     <div className="FirstBar">
-      {bars.map((value, index) => (
-        <div key={index} className="Row">
-          <p>{value.number}</p>
+      {bars.map((value) => (
+        <div key={value.number} className="Row">
+          <p className={active === value.number ? "ActiveTab" : "StepNo"}>
+            {value.number}
+          </p>
           <div className="Step">
             {" "}
             <p>{value.step}</p>
